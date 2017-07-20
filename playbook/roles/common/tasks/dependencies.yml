@@ -5,6 +5,6 @@
   with_items:
     - python-pip
     - libxml2-dev
-    - libxslt1-dev
+#    - libxslt1-dev
     - python-dev
     - git
