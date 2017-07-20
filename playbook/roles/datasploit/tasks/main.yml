@@ -1,6 +1,6 @@
 ---
 - name: "cloning the git repo"
-  git: repo=https://github.com/upgoingstar/datasploit.git dest=/opt/datasploit
+  git: repo=https://github.com/Exploit-install/datasploit.git dest=/opt/datasploit
 
 - name: installing requirements.txt using pip
   pip: requirements=/opt/datasploit/requirements.txt
@@ -12,7 +12,7 @@
   file: path=/opt/datasploit/datasploitDb state=directory mode=0755
 
 - name: starting mongodb with commandline options
-  shell: mongod --fork --logpath datasploitDb/mongodb.log --dbpath datasploitDb
+  shell: mongod --fork --logpath datasploitDb/mongodb.log --dbpath datasploitDb &
   args:
     chdir: /opt/datasploit/
     executable: /bin/bash
